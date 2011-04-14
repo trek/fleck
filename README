@@ -1,6 +1,6 @@
 `fleck` is a functional styled library for string inflection that doesn't pollute `String.prototype`.
 
-Basis Use
+Basic Use
 ======
 All the inflections are stored inside `fleck`.  They are:
   

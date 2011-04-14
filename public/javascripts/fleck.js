@@ -130,7 +130,6 @@ window.fleck = {
     var rules = this.pluralRules;
     for(var i = 0, l = rules.length; i < l; i++){
       if (str.match(rules[i][0])) {
-        console.log(rules[i][0])
         str = str.replace(rules[i][0], rules[i][1]);
         break;
       };
@@ -146,7 +145,6 @@ window.fleck = {
     var rules = this.singularRules;
     for(var i = 0, l = rules.length; i < l; i++){
       if (str.match(rules[i][0])) {
-        console.log(rules[i][0])
         str = str.replace(rules[i][0], rules[i][1]);
         break;
       };
