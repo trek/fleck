@@ -1,4 +1,6 @@
 window.fleck = {
+  // plural rules, singular rules, and starting uncountables
+  // from http://code.google.com/p/inflection-js/
   pluralRules: [
     [new RegExp('(m)an$', 'gi'),                 '$1en'],
     [new RegExp('(pe)rson$', 'gi'),              '$1ople'],
@@ -62,6 +64,9 @@ window.fleck = {
     'deer':true, 
     'news':true
   },
+  // Chain multiple inflections into a signle call
+  // Examples:
+  //   fleck.inflect('     posts', 'strip', 'singularize', 'capitalize') == 'Post'
   inflect: function(str){
     for (var i = 1, l = arguments.length; i < l; i++) {
       str = this[arguments[i]](str);
