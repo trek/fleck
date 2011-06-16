@@ -35,7 +35,21 @@ All the inflections are stored inside `fleck`.  They are:
   // Ordinals
   fleck.ordinalize(4) == "4th"
   fleck.ordinalize("13") == "13th"
-  fleck.ordinalize("122") == "122nd"
+  fleck.ordinalize("122") == "122nd"  
+
+Functional Programing
+======
+`fleck` doesn't contain any unpredictable javascript object orientation. Feel free to combine 
+with other functional libraries at will; no new anonymous functions, no silly `bind`s:
+
+  // underscore.js
+  _.each(['dog','cat','mouse'], fleck.pluralize) == ["dogs", "cats", "mice"]
+  
+  // jQuery.js
+  $.ajax({
+    url:'/data/sync_from_server/new/uncountablewords',
+    success: fleck.uncountable
+  })
 
 Chaining
 ======
