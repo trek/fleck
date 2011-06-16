@@ -230,6 +230,31 @@ describe("fleck", function() {
         expect(fleck.ordinalize(n)).toEqual(ordinalNumbers[n]);
       }
     });
+  });
 
+  describe("adding uncountable words", function(){
+    var oldUncountables;
+    beforeEach(function() {
+      oldUncountables = {};
+      for(var word in fleck.uncountableWords){
+        oldUncountables[word] = fleck.uncountableWords[word];
+      } // clone old collection
+    });
+    
+    afterEach(function() {
+      fleck.uncountableWords = oldUncountables;
+    });
+    
+    it("can make a single word uncountable", function() {
+      fleck.uncountable('dog')
+      expect(fleck.pluralize('dog')).toEqual('dog');
+    });
+    
+    it("can make a several words uncountable", function() {
+      fleck.uncountable('dog', 'cat', 'monster')
+      expect(fleck.pluralize('dog')).toEqual('dog');
+      expect(fleck.pluralize('cat')).toEqual('cat');
+      expect(fleck.pluralize('monster')).toEqual('monster');
+    });
   });
 });
