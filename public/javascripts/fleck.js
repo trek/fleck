@@ -88,7 +88,7 @@ window.fleck = function(){
     // lib.camelize("message_properties", true) == "MessageProperties"
     camelize: function(str, upper){
       if (upper) { return lib.upperCamelize(str) };
-      str.replace(/-+(.)?/g, function(match, chr) {
+      return str.replace(/[-_]+(.)?/g, function(match, chr) {
         return chr ? chr.toUpperCase() : '';
       });
     },

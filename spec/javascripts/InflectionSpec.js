@@ -18,6 +18,22 @@ describe("fleck", function() {
       }
     });
   });
+
+  describe("camelize", function() {
+    var camels = {
+      "street":                 "street",
+      "street-address":         "streetAddress",
+      "street_address":         "streetAddress",
+      "person_street_address":  "personStreetAddress"
+    }
+
+    it("converts words to camelCase", function(){
+      for(var word in camels){
+        expect(fleck.camelize(word)).toEqual(camels[word]);
+      }
+    });
+
+  });
   
   describe("pluralize", function() {
     var plural;
