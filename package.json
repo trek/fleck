@@ -1,9 +1,9 @@
 {
   "name": "fleck",
   "description": "a functional-style string inflection library",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "keywords": ["fleck", "ender", "sting", "inflection", "pluralize"],
-  "homepage": "http://example.com",
+  "homepage": "http://github.com/trek/fleck",
   "author": "Trek Glowacki <trek.glowacki@gmail.com> (http://github.com/trek)",
   "contributors": ["Joe Fiorini <> (https://github.com/joefiorini)"],
   "repository": {
