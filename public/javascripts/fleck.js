@@ -1,5 +1,17 @@
-window.fleck = function(){
-  lib = {
+/*!
+  * fleck - functional style string inflections
+  * https://github.com/trek/fleck
+  * copyright Trek Glowacki
+  * MIT License
+  */
+  
+!function (name, definition) {
+  if (typeof module != 'undefined') module.exports = definition()
+  else if (typeof define == 'function' && typeof define.amd == 'object') define(definition)
+  else this[name] = definition()
+}('fleck', function () {
+  
+  var lib = {
     // plural rules, singular rules, and starting uncountables
     // from http://code.google.com/p/inflection-js/
     // with corrections for ordering and spelling
@@ -180,6 +192,9 @@ window.fleck = function(){
                 .replace(/-/g, '_')
                 .toLowerCase();
     },
+    
+    // add an uncountable word
+    // fleck.uncountable('ninja', 'tsumani');
     uncountable: function(){
       for(var i=0,l=arguments.length; i<l; i++){
         lib.uncountableWords[arguments[i]] = true;
@@ -189,4 +204,5 @@ window.fleck = function(){
   };
   
   return lib;
-}()
+  
+});

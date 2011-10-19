@@ -1,0 +1,18 @@
+{
+  "name": "fleck",
+  "description": "a functional-style string inflection library",
+  "version": "0.5.0",
+  "keywords": ['fleck', 'ender', 'sting', 'inflection', 'pluralize']
+  "homepage": "http://example.com",
+  "author": "Trek Glowacki <trek.glowacki@gmail.com> (http://github.com/trek)",
+  "contributors": [
+    "Joe Fiorini <> (https://github.com/joefiorini)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trek/fleck.git"
+  },
+  "dependencies": {},
+  "main": "./public/javascripts/fleck.js",
+  "ender": "./src/exports/ender.js"
+}
