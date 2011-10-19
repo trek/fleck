@@ -14,5 +14,5 @@
   },
   "dependencies": {},
   "main": "./public/javascripts/fleck.js",
-  "ender": "./src/exports/ender.js"
+  "ender": "noop"
 }
