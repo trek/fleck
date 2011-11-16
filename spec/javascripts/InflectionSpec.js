@@ -5,6 +5,22 @@ describe("fleck", function() {
     });
   });
   
+  describe("underscore", function(){
+    var underscored = {
+      'camelCase': 'camel_case',
+      'CamelCase': 'camel_case',
+      'dash-es' : 'dash_es',
+      'Name::Spaced': 'name_spaced',
+      'Name.Spaced': 'name_spaced'
+    }
+    
+    it("adds underscores", function() {
+      for(var word in underscored){
+        expect(fleck.underscore(word)).toEqual(underscored[word]);
+      }
+    });
+  });
+  
   describe("dasherize", function() {
     var dashes = {
       "street"                : "street",

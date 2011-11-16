@@ -184,12 +184,13 @@
     //   lib.underscore('borderBottomWidth') == "border_bottom_width"
     //   lib.underscore('border-bottom-width') == "border_bottom_width"
     //   lib.underscore('Foo::Bar') == "foo_bar"
+    //   lib.underscore('Foo.Bar') == "foo_bar"
     underscore: function(str){
       // implementation from Prototype.js
-      return str.replace(/::/g, '/')
+      return str.replace(/::/g, '_')
                 .replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
                 .replace(/([a-z\d])([A-Z])/g, '$1_$2')
-                .replace(/-/g, '_')
+                .replace(/[-\.]/g, '_')
                 .toLowerCase();
     },
     
