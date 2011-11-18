@@ -10,6 +10,6 @@
     "type": "git",
     "url": "https://github.com/trek/fleck.git"
   },
-  "main": "./public/javascripts/fleck.js",
+  "main": "./lib/fleck.js",
   "ender": "noop"
 }
