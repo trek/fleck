@@ -4,7 +4,7 @@ describe("fleck", function() {
       expect(fleck.inflect('  posts', 'strip', 'capitalize', 'singularize')).toEqual('Post');
     });
   });
-  
+
   describe("underscore", function(){
     var underscored = {
       'camelCase': 'camel_case',
@@ -13,21 +13,21 @@ describe("fleck", function() {
       'Name::Spaced': 'name_spaced',
       'Name.Spaced': 'name_spaced'
     }
-    
+
     it("adds underscores", function() {
       for(var word in underscored){
         expect(fleck.underscore(word)).toEqual(underscored[word]);
       }
     });
   });
-  
+
   describe("dasherize", function() {
     var dashes = {
       "street"                : "street",
       "street_address"        : "street-address",
       "person_street_address" : "person-street-address"
     }
-    
+
     it("replaces underscores with dashes", function() {
       for(var word in dashes){
         expect(fleck.dasherize(word)).toEqual(dashes[word]);
@@ -50,7 +50,7 @@ describe("fleck", function() {
     });
 
   });
-  
+
   describe("pluralize", function() {
     var plural;
     describe("uncountables remain the same", function() {
@@ -58,77 +58,77 @@ describe("fleck", function() {
           'equipment', 'information', 'rice', 'money', 'species', 'series',
           'fish', 'sheep', 'moose', 'deer', 'news'
       ]
-      
+
       for(var i = 0, l = uncountableWords.length; i < l; i++){
         expect(fleck.pluralize(uncountableWords[i])).toEqual(uncountableWords[i]);
       }
     });
-    
+
     it("children", function() {
       expect(fleck.pluralize('child')).toEqual('children');
       expect(fleck.pluralize('Child')).toEqual('Children');
     });
-    
+
     it("people", function() {
       expect(fleck.pluralize('person')).toEqual('people');
       expect(fleck.pluralize('Person')).toEqual('People');
     });
-    
+
     it("men", function() {
       expect(fleck.pluralize('man')).toEqual('men');
       expect(fleck.pluralize('Man')).toEqual('Men');
     });
-    
+
     it("oxen", function() {
       expect(fleck.pluralize('ox')).toEqual('oxen');
       expect(fleck.pluralize('Ox')).toEqual('Oxen');
     });
-    
+
     it("axes", function() {
       expect(fleck.pluralize('axis')).toEqual('axes');
       expect(fleck.pluralize('Axis')).toEqual('Axes');
     });
-    
+
     it("testes", function() {
       expect(fleck.pluralize('testis')).toEqual('testes');
       expect(fleck.pluralize('Testis')).toEqual('Testes');
     });
-    
+
     it("octopi", function() {
       expect(fleck.pluralize('octopus')).toEqual('octopi');
       expect(fleck.pluralize('Octopus')).toEqual('Octopi');
     });
-    
+
     it("viri", function() {
       expect(fleck.pluralize('virus')).toEqual('viri');
       expect(fleck.pluralize('Virus')).toEqual('Viri');
     });
-    
+
     it("alises", function() {
       expect(fleck.pluralize('alias')).toEqual('aliases');
       expect(fleck.pluralize('Alias')).toEqual('Aliases');
     });
-    
+
     it("statuses", function() {
       expect(fleck.pluralize('status')).toEqual('statuses');
       expect(fleck.pluralize('Status')).toEqual('Statuses');
     });
-    
+
     it("buses", function() {
       expect(fleck.pluralize('bus')).toEqual('buses');
       expect(fleck.pluralize('Bus')).toEqual('Buses');
     });
-    
+
     it("buffaloes", function() {
       expect(fleck.pluralize('buffalo')).toEqual('buffaloes');
       expect(fleck.pluralize('Buffalo')).toEqual('Buffaloes');
     });
-    
+
     it("tomatoes", function() {
       expect(fleck.pluralize('tomato')).toEqual('tomatoes');
       expect(fleck.pluralize('Tomato')).toEqual('Tomatoes');
     });
-    
+
     it("potatoes", function() {
       expect(fleck.pluralize('potato')).toEqual('potatoes');
       expect(fleck.pluralize('Potato')).toEqual('Potatoes');
@@ -136,52 +136,52 @@ describe("fleck", function() {
     // [new RegExp('([ti])um$', 'gi'),              '$1a'],
     // [new RegExp('sis$', 'gi'),                   'ses'],
     // [new RegExp('(?:([^f])fe|([lr])f)$', 'gi'),  '$1$2ves'],
-    
+
     it("hives", function() {
       expect(fleck.pluralize('hive')).toEqual('hives');
       expect(fleck.pluralize('Hive')).toEqual('Hives');
     });
     // [new RegExp('([^aeiouy]|qu)y$', 'gi'),       '$1ies'],
     // [new RegExp('(x|ch|ss|sh)$', 'gi'),          '$1es'],
-    
+
     it("matrices", function() {
       expect(fleck.pluralize('matrix')).toEqual('matrices');
       expect(fleck.pluralize('Matrix')).toEqual('Matrices');
     });
-    
+
     it("vertices", function() {
       expect(fleck.pluralize('vertex')).toEqual('vertices');
       expect(fleck.pluralize('Vertex')).toEqual('Vertices');
     });
-    
+
     it("indecies", function() {
       expect(fleck.pluralize('index')).toEqual('indices');
       expect(fleck.pluralize('Index')).toEqual('Indices');
     });
-    
+
     it("mice", function() {
       expect(fleck.pluralize('mouse')).toEqual('mice');
       expect(fleck.pluralize('Mouse')).toEqual('Mice');
     });
-    
+
     it("lice", function() {
       expect(fleck.pluralize('louse')).toEqual('lice');
       expect(fleck.pluralize('Louse')).toEqual('Lice');
     });
-    
+
     it("quizzes", function() {
       expect(fleck.pluralize('quiz')).toEqual('quizzes');
       expect(fleck.pluralize('Quiz')).toEqual('Quizzes');
     });
-    
+
     it("dogs", function() {
       expect(fleck.pluralize('dog')).toEqual('dogs');
       expect(fleck.pluralize('Dog')).toEqual('Dogs');
     });
-    
+
     // [new RegExp('s$', 'gi'),                     's'],
   });
-  
+
   describe("ordinalize", function() {
     var ordinalNumberStrings = {
       "0" : "0th",
@@ -216,7 +216,7 @@ describe("fleck", function() {
       "1000" : "1000th",
       "1001" : "1001st"
     };
-    
+
     var ordinalNumbers = {
       0 : "0th",
       1 : "1st",
@@ -250,13 +250,13 @@ describe("fleck", function() {
       1000 : "1000th",
       1001 : "1001st"
     };
-    
+
     it("ordinalizes numbers as strings", function() {
       for(var n in ordinalNumberStrings) {
         expect(fleck.ordinalize(n)).toEqual(ordinalNumberStrings[n]);
       }
     });
-    
+
     it("ordinalizes numbers", function() {
       for(var n in ordinalNumbers) {
         expect(fleck.ordinalize(n)).toEqual(ordinalNumbers[n]);
@@ -272,16 +272,16 @@ describe("fleck", function() {
         oldUncountables[word] = fleck.uncountableWords[word];
       } // clone old collection
     });
-    
+
     afterEach(function() {
       fleck.uncountableWords = oldUncountables;
     });
-    
+
     it("can make a single word uncountable", function() {
       fleck.uncountable('dog')
       expect(fleck.pluralize('dog')).toEqual('dog');
     });
-    
+
     it("can make a several words uncountable", function() {
       fleck.uncountable('dog', 'cat', 'monster')
       expect(fleck.pluralize('dog')).toEqual('dog');
