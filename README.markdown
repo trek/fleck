@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/trek/fleck.png)](http://travis-ci.org/trek/fleck)
 `fleck` is a functional styled library for string inflection that doesn't pollute `String.prototype`.
 
 Basic Use
