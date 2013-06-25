@@ -2,14 +2,32 @@
   "name": "fleck",
   "description": "a functional-style string inflection library",
   "version": "0.9.1",
-  "keywords": ["fleck", "ender", "sting", "inflection", "pluralize"],
+  "keywords": [
+    "fleck",
+    "ender",
+    "sting",
+    "inflection",
+    "pluralize"
+  ],
   "homepage": "http://github.com/trek/fleck",
   "author": "Trek Glowacki <trek.glowacki@gmail.com> (http://github.com/trek)",
-  "contributors": ["Joe Fiorini <> (https://github.com/joefiorini)"],
+  "contributors": [
+    "Joe Fiorini (https://github.com/joefiorini)"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/trek/fleck.git"
   },
   "main": "./lib/fleck.js",
-  "ender": "noop"
+  "ender": "noop",
+  "readmeFilename": "README.markdown",
+  "gitHead": "fa86238937c3d50113d5ffe79b2c5f4ee4c8bf7e",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.5.1"
+  }
 }

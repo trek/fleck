@@ -2,7 +2,5 @@
   "name": "fleck",
   "version": "0.9.1",
   "main": "./lib/fleck.js",
-  "dependencies": {
-    "jquery": "~1.7.2"
-  }
+  "dependencies": {}
 }
